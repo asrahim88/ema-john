@@ -1,12 +1,14 @@
 import React from 'react';
 
+
 const Cart = (props) => {
     const formateNumber = num => {
         const precision = num.toFixed(2);
         return Number(precision);
     }
     const cart = props.cart;
-    const total = cart.reduce( (total, product) => total + product.price, 0)
+    const total = cart.reduce( (total, product) => total + product.price *product.quantity, 0);
+    
     let shippingConst = 0;
     if (total > 35) {
         shippingConst = 0;
@@ -27,6 +29,8 @@ const Cart = (props) => {
             <p>Tax + Vat: {formateNumber(tax)}</p>
             <p>shippingConst: {shippingConst}</p>
             <p>Total Price:{ formateNumber(total + shippingConst + tax )} </p> 
+            {props.children}
+            
 
         </div>
     );
