@@ -11,6 +11,7 @@ import Review from './Components/Review/Review';
 import Manage from './Components/Manage/Manage';
 import NotMatch from './Components/NotMatch/NotMatch';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
+import Shipment from './Components/Shipment/Shipment';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         <Switch>
           <Route path = "/shop">
           <Shop></Shop>
+          </Route>
+          <Route path = "/shipment">
+            <Shipment></Shipment>
           </Route>
           <Route path = "/review">
           <Review></Review>
